@@ -1,0 +1,62 @@
+#ingresoTareas{
+    
+    justify-content: center;
+}
+
+#columnasTareas {
+    display: flex;
+    justify-content: center;
+}
+
+#columnaToDo{
+    justify-content: center;
+    margin-left: -10em;
+    margin-right: 10em;
+}
+
+#columnaDoing{
+    justify-content: center;
+    margin-right: 10em;
+}
+
+#columnaDone{
+    justify-content: center;
+}
+
+.bloqueTarea{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    justify-content: center;
+    align-items: center;
+    background: rgb(228, 228, 228);
+    border-radius: 6px;
+    margin-top: 2em;
+    margin-bottom: 4em;
+    position: relative;
+}
+
+.nombreTareas{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.botonEliminar{
+    position: relative;
+    margin-top: -40px;
+    margin-left: 260px;
+}
+
+.botonSubirRango{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 260px;
+}
+
+.botonBajarRango{
+    position: relative;
+    margin-top: -21px;
+    margin-left: -260px;
+    margin-bottom: 10px;
+}
