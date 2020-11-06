@@ -26,19 +26,60 @@ class Tarea {
         botonBajar.className = "botonBajarRango";
         botonBajar.innerHTML = "<";
 
+        switch (this.publicacionTarea.nivel){
+            case 1:
+
+                component.appendChild(nombreTarea);
+                component.appendChild(botonBorrar);
+                component.appendChild(botonSubir);
+            break;
+            case 2:
+
+                component.appendChild(nombreTarea);
+                component.appendChild(botonBorrar);
+                component.appendChild(botonSubir);
+                component.appendChild(botonBajar);
+                break;
+            case 3:
+
+                component.appendChild(nombreTarea);
+                component.appendChild(botonBorrar);
+                component.appendChild(botonBajar);
+
+
+        }
 
         //para que los botones y nombre de tarea se creen
-        component.appendChild(nombreTarea);
+        /*component.appendChild(nombreTarea);
         component.appendChild(botonBorrar);
         component.appendChild(botonSubir);
-        component.appendChild(botonBajar);
+        component.appendChild(botonBajar);*/
 
         botonBorrar.addEventListener('click', ()=>{
             //alert(this.publicacionTarea.id);
             const database = firebase.database();
+
             database.ref('tareas/'+this.publicacionTarea.id).set(null);
         });
 
+        botonSubir.addEventListener('click', ()=>{
+            const database = firebase.database();
+
+                this.publicacionTarea.nivel++;
+                database.ref('tareas/'+this.publicacionTarea.id).set(this.publicacionTarea);
+                    
+        });
+
+
+        botonBajar.addEventListener('click', ()=>{
+            const database = firebase.database();
+
+            this.publicacionTarea.nivel--;
+                database.ref('tareas/'+this.publicacionTarea.id).set(this.publicacionTarea);
+
+        });
+
         return component;
+        
     }
 }
